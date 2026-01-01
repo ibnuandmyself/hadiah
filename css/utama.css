@@ -1,0 +1,248 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #fde2e4, #e0c3fc);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+header h2 {
+    font-size: 2rem;
+    color: #6b21a8;
+    letter-spacing: 1px;
+}
+
+/* NAVBAR */
+nav {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4c1d95;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #c084fc;
+    color: white;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* SECTION */
+.DEC {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* ARTICLE CARD */
+article {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeUp 0.8s ease;
+    transition: all 0.3s ease;
+}
+
+article h3 {
+    font-size: 1.6rem;
+    color: #7e22ce;
+    margin-bottom: 15px;
+}
+
+article p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    font-size: 0.9rem;
+    color: #4c1d95;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+}
+/* DARK MODE TOGGLE */
+.dark-toggle {
+    text-align: center;
+}
+
+.dark-toggle button {
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: #4c1d95;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.dark-toggle button:hover {
+    transform: scale(1.05);
+}
+
+/* DARK MODE STYLE */
+body.dark {
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: #e5e7eb;
+}
+
+body.dark header,
+body.dark nav,
+body.dark footer {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+body.dark nav a {
+    color: #e9d5ff;
+}
+
+body.dark nav a:hover {
+    background-color: #7c3aed;
+    color: white;
+}
+
+body.dark article {
+    background: rgba(30, 41, 59, 0.7);
+    color: #e5e7eb;
+}
+
+body.dark footer {
+    color: #e9d5ff;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    article {
+        padding: 25px;
+    }
+}
+
+/* HP */
+@media (max-width: 600px) {
+
+    header h2 {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dark-toggle button {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    article {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+
+    article p {
+        font-size: 0.95rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 12px;
+    }
+}
+
+/* LAYAR BESAR */
+@media (min-width: 1200px) {
+    .DEC {
+        max-width: 700px;
+    }
+}
