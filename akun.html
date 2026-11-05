@@ -3,50 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akun</title>
-    <link rel="stylesheet" href="/css/akun.css">
+    <title>Akun Kita 📗</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/akun.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <ul class="nav-link">
-        <li><a href="index.html" class="link">Utama</a></li>
-    </ul>
-    <div class="dark-toggle">
-        <button id="darkToggle">🌙 Dark Mode</button>
-    </div>
-</nav>
+    <!-- Wadah Animasi Partikel Hati -->
+    <div id="heart-container" aria-hidden="true"></div>
 
-<section class="isi">
-    <div class="dec-ibnu reveal">
-        <p class="ibnu-dec">
-            <span class="label">AKUN IBNU</span><br>
-            <span class="copy" data-copy="ibnuh7938@gmail.com">📧 ibnuh7938@gmail.com</span><br><br>
-            <span class="copy" data-copy="akusayangelsa">📸 akusayangelsa</span><br><br>
-            <span class="copy" data-copy="ferdani336@gmail.com">📧 ferdani336@gmail.com</span><br><br>
-            <span class="copy" data-copy="akusayangelsa">📸 akuganteng553</span>
-        </p>
-    </div>
+    <!-- Navigasi Glassmorphism -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item"><span>←</span> Utama</a></li>
+            <li><a href="gallery.html" class="nav-item"><span>📸</span> Gallery</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="darkToggle" class="mode-btn" type="button">
+                <span class="btn-icon">🌙</span>
+                <span class="btn-text">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
 
-    <div class="foto reveal">
-        <img src="img/WhatsApp Image 2025-12-14 at 21.14.02_70602b08.jpg" alt="Ibnu">
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <span class="badge">Profil & Kontak Kita</span>
+        <h2>Ruang Akun Kita 📗</h2>
+        <p class="subtitle">Klik pada salah satu akun untuk menyalin ke papan klip</p>
+    </header>
 
-    <div class="foto reveal">
-        <img src="img/WhatsApp Image 2025-12-14 at 21.15.05_34a08d7d.jpg" alt="Elsa">
-    </div>
+    <!-- Kontainer Kartu Profil Pasangan -->
+    <main class="main-container">
+        <div class="couple-wrapper">
 
-    <div class="dec-elsa reveal">
-        <p class="elsa-dec">
-            <span class="label">AKUN ELSA</span><br>
-            <span class="copy" data-copy="welsarifkiatul@gmail.com">📧 welsarifkiatul@gmail.com</span><br><br>
-            <span class="copy" data-copy="@akusayangibnu">🎵 @akusayangibnu</span><br><br>
-            <span class="copy" data-copy="elsarifkiatul@gmail.com">📧 elsarifkiatul@gmail.com</span><br><br>
-            <span class="copy" data-copy="rifkiatul#288">💬 rifkiatul#288</span>
-        </p>
-    </div>
-</section>
+            <!-- KARTU PROFIL IBNU -->
+            <article class="profile-card reveal">
+                <div class="card-glow"></div>
+                <div class="photo-wrapper">
+                    <img src="img/WhatsApp Image 2025-12-14 at 21.14.02_70602b08.jpg" alt="Foto Ibnu" class="profile-img">
+                    <span class="role-tag">Mas Ibnu 👑</span>
+                </div>
 
-<script src="js/akun.js"></script>
+                <div class="profile-info">
+                    <h3 class="name">Ibnu Hakim</h3>
+                    <p class="role-desc">Yang selalu sayang sama adek</p>
+
+                    <div class="accounts-list">
+                        <button class="account-item copy-btn" data-copy="ibnuh7938@gmail.com" type="button">
+                            <span class="acc-icon">📧</span>
+                            <span class="acc-text">ibnuh7938@gmail.com</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="akusayangelsa" type="button">
+                            <span class="acc-icon">📸</span>
+                            <span class="acc-text">akusayangelsa</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="ferdani336@gmail.com" type="button">
+                            <span class="acc-icon">📧</span>
+                            <span class="acc-text">ferdani336@gmail.com</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="akuganteng553" type="button">
+                            <span class="acc-icon">📸</span>
+                            <span class="acc-text">akuganteng553</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SIMBOL CINTA TENGAH -->
+            <div class="love-badge reveal" aria-hidden="true">
+                <div class="heart-pulse">🤍</div>
+                <span>Forever</span>
+            </div>
+
+            <!-- KARTU PROFIL ELSA -->
+            <article class="profile-card reveal">
+                <div class="card-glow"></div>
+                <div class="photo-wrapper">
+                    <img src="img/WhatsApp Image 2025-12-14 at 21.15.05_34a08d7d.jpg" alt="Foto Elsa" class="profile-img">
+                    <span class="role-tag">Adek Elsa 🌸</span>
+                </div>
+
+                <div class="profile-info">
+                    <h3 class="name">Rifkiatul Elsa</h3>
+                    <p class="role-desc">Wanita paling cantik di matanya mas</p>
+
+                    <div class="accounts-list">
+                        <button class="account-item copy-btn" data-copy="welsarifkiatul@gmail.com" type="button">
+                            <span class="acc-icon">📧</span>
+                            <span class="acc-text">welsarifkiatul@gmail.com</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="@akusayangibnu" type="button">
+                            <span class="acc-icon">🎵</span>
+                            <span class="acc-text">@akusayangibnu</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="elsarifkiatul@gmail.com" type="button">
+                            <span class="acc-icon">📧</span>
+                            <span class="acc-text">elsarifkiatul@gmail.com</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+
+                        <button class="account-item copy-btn" data-copy="rifkiatul#288" type="button">
+                            <span class="acc-icon">💬</span>
+                            <span class="acc-text">rifkiatul#288</span>
+                            <span class="copy-hint">Salin</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Notifikasi Toast Saat Disalin -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">Berhasil disalin! ✨</div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Dua hati, satu tujuan masa depan bersama 🤍</p>
+    </footer>
+
+    <script src="js/akun.js"></script>
 </body>
 </html>
