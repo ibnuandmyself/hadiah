@@ -1,86 +1,106 @@
-/* =====================
-   DARK MODE
-===================== */
-const toggleBtn = document.getElementById("darkToggle");
-const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. DARK MODE DENGAN LOCALSTORAGE ---
+    const darkToggle = document.getElementById('darkToggle');
+    const btnIcon = darkToggle.querySelector('.btn-icon');
+    const btnText = darkToggle.querySelector('.btn-text');
 
-if (localStorage.getItem("darkMode") === "on") {
-    body.classList.add("dark");
-    toggleBtn.textContent = "☀️ Light Mode";
-}
+    const updateThemeUI = (isDark) => {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            btnIcon.textContent = '☀️';
+            if (btnText) btnText.textContent = 'Light Mode';
+        } else {
+            document.body.classList.remove('dark-mode');
+            btnIcon.textContent = '🌙';
+            if (btnText) btnText.textContent = 'Dark Mode';
+        }
+    };
 
-toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    if (body.classList.contains("dark")) {
-        toggleBtn.textContent = "☀️ Light Mode";
-        localStorage.setItem("darkMode", "on");
-    } else {
-        toggleBtn.textContent = "🌙 Dark Mode";
-        localStorage.setItem("darkMode", "off");
+    // Cek preferensi yang tersimpan sebelumnya
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        updateThemeUI(true);
     }
-});
 
+    darkToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeUI(isDark);
+    });
 
-/* =====================
-   ARTICLE FADE IN
-===================== */
-window.addEventListener("load", () => {
-    const article = document.querySelector("article");
-    article.style.opacity = "0";
-    article.style.transform = "translateY(40px)";
+    // --- 2. PEMUTAR MUSIK LATAR (OPSIONAL) ---
+    const musicToggle = document.getElementById('musicToggle');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicIcon = document.getElementById('musicIcon');
+    let isPlaying = false;
 
-    setTimeout(() => {
-        article.style.transition = "all 1s ease";
-        article.style.opacity = "1";
-        article.style.transform = "translateY(0)";
-    }, 200);
-});
-
-
-/* =====================
-   TYPEWRITER EFFECT
-===================== */
-const paragraph = document.querySelector("article p");
-const fullText = paragraph.innerHTML;
-paragraph.innerHTML = "";
-
-let index = 0;
-const typingSpeed = 50;
-
-function typeText() {
-    if (index < fullText.length) {
-        paragraph.innerHTML += fullText.charAt(index);
-        index++;
-        setTimeout(typeText, typingSpeed);
+    if (musicToggle && bgMusic) {
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.textContent = '🎵';
+            } else {
+                bgMusic.play().then(() => {
+                    musicIcon.textContent = '⏸️';
+                }).catch(() => {
+                    // Browser memblokir autoplay jika belum ada interaksi pengguna
+                    console.log('Interaksi diperlukan untuk memutar audio');
+                });
+            }
+            isPlaying = !isPlaying;
+        });
     }
-}
 
-setTimeout(typeText, 600);
+    // --- 3. EFEK FLOATING HEARTS DI LATAR ---
+    const heartContainer = document.getElementById('heart-container');
+    const hearts = ['🤍', '✨', '🌸', '🤍', '🕊️'];
 
+    function createFloatingHeart() {
+        if (!heartContainer) return;
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+        
+        // Posisi dan ukuran acak
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 4 + 7 + 's';
+        heart.style.fontSize = Math.random() * 14 + 12 + 'px';
+        
+        heartContainer.appendChild(heart);
 
-/* =====================
-   BACKGROUND MUSIC
-===================== */
-const audio = new Audio("music.mp3"); // taruh file music.mp3 di folder yang sama
-audio.loop = true;
-audio.volume = 0.25;
-
-document.body.addEventListener("click", () => {
-    if (audio.paused) {
-        audio.play().catch(() => {});
-    }
-}, { once: true });
-
-
-/* =====================
-   NAV CLICK EFFECT
-===================== */
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", () => {
-        link.style.transform = "scale(0.95)";
+        // Hapus elemen setelah selesai melayang
         setTimeout(() => {
-            link.style.transform = "scale(1)";
-        }, 150);
+            heart.remove();
+        }, 11000);
+    }
+
+    // Buat hati melayang setiap 1.5 detik
+    setInterval(createFloatingHeart, 1500);
+
+    // --- 4. KLIK UNTUK MUNCULKAN HATI KECIL (INTERAKTIF) ---
+    document.addEventListener('click', (e) => {
+        // Jangan picu jika yang diklik tombol atau link
+        if (e.target.closest('button') || e.target.closest('a')) return;
+
+        const popHeart = document.createElement('div');
+        popHeart.textContent = '🤍';
+        popHeart.style.position = 'fixed';
+        popHeart.style.left = `${e.clientX}px`;
+        popHeart.style.top = `${e.clientY}px`;
+        popHeart.style.pointerEvents = 'none';
+        popHeart.style.fontSize = '18px';
+        popHeart.style.transform = 'translate(-50%, -50%) scale(0.6)';
+        popHeart.style.transition = 'all 0.7s cubic-bezier(0.25, 1, 0.5, 1)';
+        popHeart.style.opacity = '1';
+        popHeart.style.zIndex = '9999';
+
+        document.body.appendChild(popHeart);
+
+        requestAnimationFrame(() => {
+            popHeart.style.transform = 'translate(-50%, -80px) scale(1.4)';
+            popHeart.style.opacity = '0';
+        });
+
+        setTimeout(() => popHeart.remove(), 700);
     });
 });
