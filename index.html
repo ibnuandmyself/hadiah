@@ -1,44 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ucapan</title>
+    <title>Untuk Sayang 🤍</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/utama.css">
 </head>
 <body>
 
-    <header>
-        <h2>Ucapan Terimakasih Untuk <br> Wanita Yang Telah Menemani Mas</h2>
-    </header>
+    <!-- Wadah Animasi Partikel Hati -->
+    <div id="heart-container" aria-hidden="true"></div>
 
-    <nav>
-        <ul>
-            <li><a href="gallery.html">Gallery📸</a></li>
-            <li><a href="akun.html">Akun Kita📗</a></li>
-            <div class="dark-toggle">
-                <button id="darkToggle">🌙 Dark Mode</button>
-            </div>
+    <!-- Navigasi Glassmorphism -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="gallery.html" class="nav-item"><span>📸</span> Gallery</a></li>
+            <li><a href="akun.html" class="nav-item"><span>📗</span> Akun Kita</a></li>
         </ul>
+
+        <div class="nav-actions">
+            <!-- Tombol Musik (Opsional) -->
+            <button id="musicToggle" class="icon-btn" title="Putar Musik">
+                <span id="musicIcon">🎵</span>
+            </button>
+            <audio id="bgMusic" loop src="Multo - Cup of Joe (Official Lyric Video) - (320 Kbps).mp3"></audio>
+
+            <!-- Tombol Mode Gelap -->
+            <button id="darkToggle" class="mode-btn" type="button">
+                <span class="btn-icon">🌙</span>
+                <span class="btn-text">Dark Mode</span>
+            </button>
+        </div>
     </nav>
 
-    <main>
-        <section class="DEC">
-            <article>
-                <h3>haiiiii sayangggggggkuuuuuu</h3>
-                <p>makasiiii udahhhh mampirrrr keeee website iniiii, masssss cumannnn mauuuu bilanggggg makasihhhh banyakkkk keee adekkkk karenaaa selaluuuu beradaaa 
-                diiiii sampingnyaaa massss, massss sangatttt beruntungggg bertemuuuu dengannnn adekkkk kekkkk kenapaaa yaaa ndakkkk dariiii duluuuu ketemuuunyaaa gituuuu 
-                tapiiii gapapaaa yangggg pentingggg massss sudahhhh menemukannn orangggg yanggg akannnn massss nikahiiii diiii masaaa depannnn nantiiiii, makasihhhh banyakkkk
-                yaaaa sayanggggg walaupunnnn diiii tahunnnnn 2024 banyakkkkk rintangannn banyakkkk hallll sedihhhhh, masssss mintaaa maaaffff untukkk semuanyaaa yangggg
-                apaaaa massss perbuatttt, diiii tahunnnn baruuu iniiii massss pastikannnn akannn membuatttt momennn yangggg ndakkk akannn pernahhhh adekkkk lupakannnn seumurrrrr
-                hidupnyaaa adekkkkk massss janjiiiii, sekaliiii lagiiii makasihhhh yaaa sayangggg atasss segalaaa yangggg adekkkk berikannn keee masss dannnn massss sangatttt
-                menyukainyaaaa terutamaaaa kisss kitaaaa  jadiiii diiii websiteee iniiii adaaa tigaaa pilihannn diii atassss adaaaa  Gallery📸 dan Akun Kita📗  silahkannn diii pilihhh
-                yanggg manaaa duluuuu yanggg mauuuu diiii liattt</p>
-            </article>
-        </section>
+    <!-- Header -->
+    <header class="header">
+        <span class="badge">Surat Cinta Digital</span>
+        <h2>Ucapan Terimakasih Untuk<br><em>Wanita Yang Telah Menemani Mas</em></h2>
+        <div class="divider"><span>❦</span></div>
+    </header>
+
+    <!-- Konten Surat -->
+    <main class="main-content">
+        <article class="letter-card">
+            <div class="card-glow"></div>
+            
+            <header class="card-header">
+                <h3>Haiiiii Sayangggggggkuuuuuu 💌</h3>
+            </header>
+
+            <div class="card-body">
+                <p>
+                    makasiiii udahhhh mampirrrr keeee website iniiii, masssss cumannnn mauuuu bilanggggg makasihhhh banyakkkk keee adekkkk karenaaa selaluuuu beradaaa diiiii sampingnyaaa massss, massss sangatttt beruntungggg bertemuuuu dengannnn adekkkk kekkkk kenapaaa yaaa ndakkkk dariiii duluuuu ketemuuunyaaa gituuuu tapiiii gapapaaa yangggg pentingggg massss sudahhhh menemukannn orangggg yanggg akannnn massss nikahiiii diiii masaaa depannnn nantiiiii.
+                </p>
+                <p>
+                    makasihhhh banyakkkk yaaaa sayanggggg walaupunnnn diiii tahunnnnn 2024 banyakkkkk rintangannn banyakkkk hallll sedihhhhh, masssss mintaaa maaaffff untukkk semuanyaaa yangggg apaaaa massss perbuatttt, diiii tahunnnn baruuu iniiii massss pastikannnn akannn membuatttt momennn yangggg ndakkk akannn pernahhhh adekkkk lupakannnn seumurrrrr hidupnyaaa adekkkkk massss janjiiiii.
+                </p>
+                <p>
+                    sekaliiii lagiiii makasihhhh yaaa sayangggg atasss segalaaa yangggg adekkkk berikannn keee masss dannnn massss sangatttt menyukainyaaaa terutamaaaa kisss kitaaaa. jadiiii diiii websiteee iniiii adaaa tigaaa pilihannn diii atassss adaaaa 
+                    <a href="gallery.html" class="inline-link"><strong>Gallery 📸</strong></a> dan 
+                    <a href="akun.html" class="inline-link"><strong>Akun Kita 📗</strong></a>, 
+                    silahkannn diii pilihhh yanggg manaaa duluuuu yanggg mauuuu diiii liattt ✨
+                </p>
+            </div>
+
+            <footer class="card-footer">
+                <div class="signature">Tertanda, Masmu 🕊️</div>
+            </footer>
+        </article>
     </main>
 
-    <footer>Website yang di buat dengan sepenuh hatinya mas 🤍🤍</footer>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Website yang dibuat dengan sepenuh hatinya mas <span class="heart-pulse">🤍</span></p>
+    </footer>
+
+    <script src="js/utama.js"></script>
 </body>
-<script src="js/utama.js"></script>
 </html>
