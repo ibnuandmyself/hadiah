@@ -1,114 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="/css/gallery.css">
+    <title>Gallery Kenangan Kita 📸</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
-    <header>
-        <h2>Ini Tuh Gallery Kita di Tahun 2024</h2>
+
+    <!-- Wadah Partikel Melayang -->
+    <div id="heart-container" aria-hidden="true"></div>
+
+    <!-- Navigasi Glassmorphism -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-item"><span>←</span> Kembali</a></li>
+            <li><a href="akun.html" class="nav-item"><span>📗</span> Akun Kita</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="darkToggle" class="mode-btn" type="button">
+                <span class="btn-icon">🌙</span>
+                <span class="btn-text">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <span class="badge">Album Memori 2024</span>
+        <h2>Ini Tuh Gallery Kita di Tahun 2024 🤍</h2>
+        <p class="subtitle">Setiap foto punya cerita manisnya masing-masing</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">KEMBALI</a></li>
-            <li><a href="akun.html">Akun Kita📗</a></li>
-            <div class="dark-toggle">
-                <button id="darkToggle">🌙 Dark Mode</button>
+    <main class="main-container">
+
+        <!-- Kategori 1 -->
+        <section class="section-group">
+            <div class="section-title">
+                <span class="tag">Chapter 01</span>
+                <h3>Foto Pertama Yang Adek Kirim :&gt;</h3>
             </div>
-        </ul>
-    </nav>
-    <main>
-    <h1 class="judul">FOTO PERTAMA YANG ADEK KIRIM :></h1>
-    <section class="album">
+            <div class="album">
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-08-20 at 18.34.42_688bd8a7.jpg" alt="Foto Pertama 1" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-08-20 at 18.34.44_5417654f.jpg" alt="Foto Pertama 2" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-08-20 at 18.34.45_bf32b673.jpg" alt="Foto Pertama 3" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2026-01-01 at 2.32.16 PM.jpeg" alt="Foto Pertama 4" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-08-20 at 18.34.42_688bd8a7.jpg" alt="Kenangan 1">
-    </div>
+        <!-- Kategori 2 -->
+        <section class="section-group">
+            <div class="section-title">
+                <span class="tag">Chapter 02</span>
+                <h3>Foto Fotbar Kita 👩‍❤️‍👨</h3>
+            </div>
+            <div class="album">
+                <div class="photo">
+                    <img src="img/IMG-20251214-WA0018.jpg" alt="Fotbar 1" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-12-14 at 17.40.56_11647089.jpg" alt="Fotbar 2" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/IMG-20251214-WA0016.jpg" alt="Fotbar 3" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2026-01-01 at 2.37.26 PM.jpeg" alt="Fotbar 4" loading="lazy">
+                </div>
+        </section>
 
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-08-20 at 18.34.44_5417654f.jpg" alt="Kenangan 2">
-    </div>
+        <!-- Kategori 3 -->
+        <section class="section-group">
+            <div class="section-title">
+                <span class="tag">Chapter 03</span>
+                <h3>Foto Baju Adat :&gt;</h3>
+            </div>
+            <div class="album">
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-12-14 at 20.41.36_2e299ec1.jpg" alt="Baju Adat 1" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-12-14 at 20.56.28_4840facb.jpg" alt="Baju Adat 2" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-08-20 at 18.34.45_bf32b673.jpg" alt="Kenangan 3">
-    </div>
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2026-01-01 at 2.32.16 PM.jpeg" alt="Kenangan 4">
-    </div>
-        
-    </section>
-    <h1 class="judul">FOTO FOTBAR KITA</h1>
-    <section class="album">
-
-    <div class="photo">
-        <img src="img/IMG-20251214-WA0018.jpg" alt="Kenangan 1">
-    </div>
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-12-14 at 17.40.56_11647089.jpg" alt="Kenangan 2">
-    </div>
-
-    <div class="photo">
-        <img src="img/IMG-20251214-WA0016.jpg" alt="Kenangan 3">
-    </div>
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2026-01-01 at 2.37.26 PM.jpeg" alt="Kenangan 4">
-    </div>
-        
-    <div class="photo">
-        <img src="img/foto fotbar.jpeg" alt="Kenangan 1">
-    </div>
-
-    <div class="photo">
-        <img src="img/foto fotbar1.jpeg" alt="Kenangan 1">
-    </div>
-
-    <div class="photo">
-        <img src="img/foto fotbar2.jpeg" alt="Kenangan 1">
-    </div>
-
-    </section>
-
-    <h1 class="judul">FOTO BAJU ADAT :></h1>
-    <section class="album">
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-12-14 at 20.41.36_2e299ec1.jpg" alt="Kenangan 1">
-    </div>
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-12-14 at 20.56.28_4840facb.jpg" alt="Kenangan 2">
-    </div>
-        
-    </section>
-
-    <h1 class="judul">FOTO TERCANTIK, TERGANTENG DAN LUCU :></h1>
-    <section class="album">
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-12-14 at 21.14.02_70602b08.jpg" alt="Kenangan 1">
-    </div>
-
-    <div class="photo">
-        <img src="img/WhatsApp Image 2025-12-14 at 21.15.05_34a08d7d.jpg" alt="Kenangan 2">
-    </div>
-
-    <div class="photo">
-        <img src="img/IMG-20251030-WA0003.jpg" alt="Kenangan 3">
-    </div>
-
-    <div class="photo">
-        <img src="img/IMG-20251213-WA0036.jpg" alt="Kenangan 4">
-    </div>
-        
-    </section>
+        <!-- Kategori 4 -->
+        <section class="section-group">
+            <div class="section-title">
+                <span class="tag">Chapter 04</span>
+                <h3>Foto Tercantik, Terganteng Dan Lucu :&gt; ✨</h3>
+            </div>
+            <div class="album">
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-12-14 at 21.14.02_70602b08.jpg" alt="Spesial 1" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/WhatsApp Image 2025-12-14 at 21.15.05_34a08d7d.jpg" alt="Spesial 2" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/IMG-20251030-WA0003.jpg" alt="Spesial 3" loading="lazy">
+                </div>
+                <div class="photo">
+                    <img src="img/IMG-20251213-WA0036.jpg" alt="Spesial 4" loading="lazy">
+                </div>
+            </div>
+        </section>
 
     </main>
+
+    <!-- Modal Lightbox Terstruktur -->
+    <div id="imageModal" class="modal" role="dialog" aria-hidden="true">
+        <button class="modal-btn close-btn" id="modalClose" aria-label="Tutup">&times;</button>
+        <button class="modal-btn nav-arrow prev-btn" id="modalPrev" aria-label="Sebelumnya">&#10094;</button>
+        <div class="modal-content-wrap">
+            <img class="modal-img" id="modalImage" alt="Pratinjau Foto">
+            <div class="modal-counter" id="modalCounter">1 / 1</div>
+        </div>
+        <button class="modal-btn nav-arrow next-btn" id="modalNext" aria-label="Selanjutnya">&#10095;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Setiap momen bersama adek adalah kenangan terbaik mas 🤍</p>
+    </footer>
+
+    <script src="js/gallery.js"></script>
 </body>
-<script src="js/gallery.js"></script>
 </html>
